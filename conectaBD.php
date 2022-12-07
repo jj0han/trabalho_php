@@ -1,7 +1,7 @@
 <?php
-$server = "mysql:host=localhost;dbname=conteudos";
-$user = "root";
-$password = "";
+$server = 'mysql:host=localhost;dbname=conteudos;port=3305';
+$user = 'root';
+$password = '';
 
 try {
     $pdo = new PDO($server, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);

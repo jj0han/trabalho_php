@@ -1,6 +1,7 @@
 <?php
-    require_once("./conectaBD.php");
     try {
+        require_once("conectaBD.php");
+        
         //SQL de Insercao no banco de dados
         $sql = "INSERT INTO tb_conteudos (titulo, descricao, diretor, data, URLimagem, categoria) VALUES (:tit, :desc, :dir, :dt, :img, :cat)";
     
