@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho prático</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css">|
     <script src="./redirecionar.js" defer></script>
+    <script src="./funcoes.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@
             // print_r(isset($_GET["msg"]) ? $_GET["msg"] : "");
 
             //Consulta ao SQL
-            $sql = "SELECT * FROM tb_conteudos";
+            $sql = "SELECT * FROM tb_conteudos ORDER BY codigo DESC";
 
             try {
                 $stmt = $pdo->prepare($sql);
@@ -35,17 +36,32 @@
                     $conteudos = $stmt->fetchAll();
                 }
             } catch(PDOException $e) {
-                echo("Falha ao obter notícias");
+                echo("Falha ao obter séries");
             }
             
             for($i = 0; $i < sizeof($conteudos); $i++){
-                echo("<div class='conteudo' value='visualizar.php' class='container_conteudo'><img class='imagem' src='" . $conteudos[$i]["URLimagem"] . "' alt=''>");
+                echo("<div class='conteudo' class='container_conteudo'><img class='imagem' src='" . $conteudos[$i]["URLimagem"] . "' alt='' onclick='visualizar(" . $conteudos[$i]['codigo'] . ");'>");
                 echo("<p class='titulo'>" . $conteudos[$i]["titulo"] . "</p>");
-                echo("<p class='diretor'>" . $conteudos[$i]["diretor"] . "</p></div>");
+                echo("<p class='diretor'>" . $conteudos[$i]["diretor"] . "</p>");
+                echo("<button class='botaoFuncao' onclick='editar(" . $conteudos[$i]['codigo'] . ");'>Editar</button>");
+                echo("<button class='botaoFuncao' onclick='excluir(" . $conteudos[$i]['codigo'] . ");'>Excluir</button></div>");
             }
             ?>
         </main>
     </section>
-    
+    <script>
+        function editar(cod) {
+            window.location.href = `editar.php?cod=${cod}`;
+        }
+
+        function visualizar(cod) {
+            window.location.href = `visualizar.php?cod=${cod}`;
+        }
+
+        function excluir(cod) {
+            alert(`Prosseguir com exclusão?`);
+            window.location.href = `excluir.php?cod=${cod}`;
+        }
+    </script>
 </body>
 </html>

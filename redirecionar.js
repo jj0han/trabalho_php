@@ -5,10 +5,3 @@ const botao = document.querySelector("#botaoRedirecionar")
 botao.addEventListener("click", () => {
     window.location.href = botao.getAttribute("value")
 })
-
-const conteudos = document.querySelectorAll(".conteudo")
-conteudos.forEach(conteudo => {
-    conteudo.addEventListener("click", () => {
-        window.location.href = "visualizar.php"
-    })
-})
