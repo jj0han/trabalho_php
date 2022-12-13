@@ -11,12 +11,24 @@ header, section {
 header { 
     position: fixed;
     height: 100vh;
-    width: 200px;
+    width: 270px;
     box-shadow: 1px 0px 15px black;
 }
 
+.busca_container {
+    display: flex;
+}
+
+.busca_input {
+    border-radius: 5px 0 0 5px ;
+}
+
+.button_input {
+    border-radius: 0 5px 5px 0;
+}
+
 section {
-    margin-left: 200px;
+    margin-left: 270px;
 }
 
 button {
@@ -61,6 +73,10 @@ label {
     width: 100px;
     margin: auto;
     display: block;
+}
+
+#botaoRedirecionar {
+    margin-top: 10px;
 }
 
 .botaoFuncao {

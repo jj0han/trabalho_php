@@ -12,7 +12,7 @@
 <body>
     <?php 
         require_once "conectaBD.php";
-
+        $codigo = $_GET["cod"];
         try {
             $sql = "SELECT * FROM tb_conteudos WHERE codigo = :cod";
 
@@ -27,12 +27,13 @@
             if($resultado) {
                 $conteudos = $stmt->fetchAll();
             }
+            
         } catch(PDOException $e) {
             echo("Falha ao obter séries");
         }
     ?>
     <div class="formulario_container">
-        <form class="formulario" action="editarCadastro.php" method="post">
+        <form  class="formulario" action="editarCadastro.php?cod=<?php echo $codigo?>" method="post">
             <div>
                 <div class="input">
                     <label for="titulo">Título</label>
@@ -67,7 +68,7 @@
                     <input value="<?php echo $conteudos[0]["URLimagem"] ;?>" type="text" name="URLimagem">
                 </div>
             </div>
-            <button id="botaoCadastrar" type="submit">Cadastrar</button>
+            <button id="botaoCadastrar" type="submit">Editar</button>
         </form>
         <button id="botaoRedirecionar" value="index.php">Voltar</button>
     </div>

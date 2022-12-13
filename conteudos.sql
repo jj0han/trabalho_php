@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Dez-2022 às 15:56
+-- Tempo de geração: 13-Dez-2022 às 15:25
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -42,9 +42,9 @@ CREATE TABLE `tb_conteudos` (
 --
 
 INSERT INTO `tb_conteudos` (`codigo`, `titulo`, `descricao`, `diretor`, `data`, `URLimagem`, `categoria`) VALUES
-(1, 'The Witcher', 'foda', 'Alguém aí', '2019-12-03', 'https://br.web.img3.acsta.net/pictures/19/11/29/17/57/5161763.jpg', 'Ação'),
-(3, 'Star Trek', 'viajem no espaço blablabla', 'Spok da Silva', '1970-06-18', 'http://4.bp.blogspot.com/--fcJNB1K9SE/Vliy0y1cw1I/AAAAAAAADTI/_IwvgpoHY9Y/s1600/1.jpg', 'Ficção Científica'),
-(4, 'The Boys', 'Super Pessoas malvadas', 'Amazon dos Santos', '2022-12-08', 'https://s2.glbimg.com/e-Onx3L8q79OktYj3sUx4WrRIDM=/e.glbimg.com/og/ed/f/original/2020/08/04/butcher-_clean.jpg', 'Ação');
+(3, 'Star Trek 3', 'viajem no espaço blablabla', 'Spok da Silva', '1970-06-18', 'http://4.bp.blogspot.com/--fcJNB1K9SE/Vliy0y1cw1I/AAAAAAAADTI/_IwvgpoHY9Y/s1600/1.jpg', ''),
+(4, 'The Boys 2ª Temp.', 'Super Pessoas malvadas', 'Amazon dos Santos', '2022-12-08', 'https://s2.glbimg.com/e-Onx3L8q79OktYj3sUx4WrRIDM=/e.glbimg.com/og/ed/f/original/2020/08/04/butcher-_clean.jpg', 'Ação'),
+(7, 'The Witcher 2ªTemporada', 'Geraldo', 'Não Sei', '2020-07-15', 'https://br.web.img3.acsta.net/pictures/19/11/29/17/57/5161763.jpg', '');
 
 --
 -- Índices para tabelas despejadas
@@ -64,7 +64,7 @@ ALTER TABLE `tb_conteudos`
 -- AUTO_INCREMENT de tabela `tb_conteudos`
 --
 ALTER TABLE `tb_conteudos`
-  MODIFY `codigo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codigo` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

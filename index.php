@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalho prático</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">|
+    <link rel="stylesheet" href="./css/index.css">
     <script src="./redirecionar.js" defer></script>
     <script src="./funcoes.js" defer></script>
 </head>
@@ -14,6 +14,10 @@
     <header>
         <h1>SérieFlix</h1>
         <p>Conta: Admin</p>
+        <form class="busca_container" action="busca.php" method="post">
+            <input class="busca_input" name="nome" type="text">
+            <button class="button_input" name="titulo" onclick="buscar();" type="submit">Buscar</button>
+        </form>
         <button id="botaoRedirecionar" value="cadastrarSerie.php">Cadastrar</button>
     </header>
     <section class="conteudo_principal">
@@ -50,17 +54,23 @@
         </main>
     </section>
     <script>
+        function buscar(nome) {
+            window.location.href = `busca.php?nome=${nome}`
+        }
+
         function editar(cod) {
-            window.location.href = `editar.php?cod=${cod}`;
+            window.location.href = `editar.php?cod=${cod}`
         }
 
         function visualizar(cod) {
-            window.location.href = `visualizar.php?cod=${cod}`;
+            window.location.href = `visualizar.php?cod=${cod}`
         }
 
         function excluir(cod) {
-            alert(`Prosseguir com exclusão?`);
-            window.location.href = `excluir.php?cod=${cod}`;
+            const text = "Prosseguir com exclusão?"
+            if(confirm(text) == true) {
+                window.location.href = `excluir.php?cod=${cod}`
+            }
         }
     </script>
 </body>
